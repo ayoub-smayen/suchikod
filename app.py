@@ -195,4 +195,4 @@ def handle_404(exception):
 if __name__ == '__main__':
     app.config['TRAP_BAD_REQUEST_ERRORS'] = True
     app.config['DEBUG'] = False
-    app.run(host='127.0.0.1', debug=False)
+    app.run(host='0.0.0.0',port=5000, debug=False)

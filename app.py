@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, redirect, url_for, request, session
-from config import Config
+#from config import Config
 from forms import LoginForm, RegisterForm, CreateRecipeForm, EditRecipeForm, ConfirmDelete
 from flask_pymongo import PyMongo, DESCENDING
 from bson.objectid import ObjectId
@@ -11,8 +11,10 @@ import sys
 
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = os.environ.get("MONGO_URI")
-app.config.from_object(Config)
+app.config["SECRET_KEY"]="123456789ace"
+app.config['MONGO_URI'] = "mongodb+srv://admin1:anime@cluster0.fgqdy.mongodb.net/suschi?retryWrites=true&w=majority"
+#os.environ.get("MONGO_URI")
+#app.config.from_object(Config)
 
 mongo = PyMongo(app)
 
